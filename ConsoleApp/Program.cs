@@ -2,4 +2,5 @@
 
 // DateOnlyAndTimeOnlyClasses.Run();
 // ProcessIdAndPath.Run();
-NewLinqMethods.Run();
+// NewLinqMethods.Run();
+ThrowIfNull.Run();

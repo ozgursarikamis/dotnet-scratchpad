@@ -1,4 +1,5 @@
 ﻿using ConsoleApp;
 
 // DateOnlyAndTimeOnlyClasses.Run();
-ProcessIdAndPath.Run();
+// ProcessIdAndPath.Run();
+NewLinqMethods.Run();

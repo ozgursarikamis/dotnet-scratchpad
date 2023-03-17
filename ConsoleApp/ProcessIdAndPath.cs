@@ -26,5 +26,28 @@ public static class NewLinqMethods
         {
             Console.WriteLine(item[0]);
         }
+        
+        Console.WriteLine();
+        
+        var people = new List<Person>
+        {
+            new() { FirstName = "John", LastName = "Doe", DateOfBirth = new DateOnly(1980, 1, 1) },
+            new() { FirstName = "Jane", LastName = "Doe", DateOfBirth = new DateOnly(1985, 1, 1) },
+            new() { FirstName = "John", LastName = "Smith", DateOfBirth = new DateOnly(1970, 1, 1) },
+            new() { FirstName = "Jane", LastName = "Smith", DateOfBirth = new DateOnly(1975, 1, 1) },
+        };
+        var oldest = people.MaxBy(p => p.DateOfBirth);
+        var youngest = people.MinBy(p => p.DateOfBirth);
+
+        Console.WriteLine($"Oldest: {oldest!.FirstName} {oldest.LastName}");
+        Console.WriteLine($"Youngest: {youngest!.FirstName} {youngest.LastName}");
+        Console.WriteLine();
     }
+}
+
+public class Person
+{
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public DateOnly DateOfBirth { get; set; }
 }

@@ -1,6 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ConsoleApp;
 
-MailAddress address;
-
-Debug.WriteLine("Debug Message");
-Console.WriteLine("Hello, World!");
+DateOnlyAndTimeOnlyClasses.Run();

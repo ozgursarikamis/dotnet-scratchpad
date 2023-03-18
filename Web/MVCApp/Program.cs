@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,18 @@ builder.Services.AddHttpLogging(options =>
 {
     options.LoggingFields = HttpLoggingFields.All;
 });
+
+Host.CreateDefaultBuilder(args)
+    .ConfigureLogging(logging =>
+    {
+        logging.AddJsonConsole(options =>
+        {
+            options.JsonWriterOptions = new JsonWriterOptions()
+            {
+                Indented = true
+            };
+        });
+    });
 
 var app = builder.Build();
 

@@ -1,7 +1,14 @@
+using Microsoft.AspNetCore.HttpLogging;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpLogging(options =>
+{
+    options.LoggingFields = HttpLoggingFields.All;
+});
 
 var app = builder.Build();
 
@@ -12,6 +19,13 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.Use(async (context, next) =>
+{
+    context.Request.Headers.AcceptLanguage = "C# Forever";
+    context.Response.Headers.XPoweredBy = "ASP.NET Core 6.0 (and Oz :) )";
+    await next.Invoke();
+});
 
 app.UseHttpLogging();
 app.UseHttpsRedirection();

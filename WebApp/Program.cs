@@ -4,6 +4,9 @@ using WebApp.Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,5 +21,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/orders", ([FromServices] IOrderService service)
+        => Results.Ok(service.GetOrders()))
+    .AddEndpointFilter(async (context, next) =>
+    {
+        Console.WriteLine("Before");
+        var endpointResult = await next(context);
+        Console.WriteLine("After");
 
+        return endpointResult;
+    });
 app.Run();

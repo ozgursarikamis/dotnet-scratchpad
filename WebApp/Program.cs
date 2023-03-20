@@ -57,4 +57,10 @@ mobileApiGroup.MapPost("survey", (SurveyResults results) =>
     return "Thank You!";
 });
 
+app.MapPost("/upload", async (IFormFile file) =>
+{
+    await using var stream = File.OpenWrite("upload.jpg");
+    await file.CopyToAsync(stream);
+});
+
 app.Run();

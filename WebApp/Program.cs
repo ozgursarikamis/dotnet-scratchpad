@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 using WebApp.Services;
 using WebApp.Services.Contracts;
 
@@ -31,4 +33,18 @@ app.MapGet("/orders", ([FromServices] IOrderService service)
 
         return endpointResult;
     });
+
+app.MapGet("/rewards", () => "Secret discounts")
+    .AddEndpointFilter(async (context, next) =>
+    {
+        context.HttpContext.Request.Headers.TryGetValue("x-device-type", out var deviceType);
+        if (deviceType != "mobile")
+        {
+            return Results.BadRequest();
+        }
+        var result = await next(context);
+        Debug.WriteLine("After");
+        return result;
+    });
+
 app.Run();

@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
 using WebApp.Models;
 using WebApp.Services;
 using WebApp.Services.Contracts;
@@ -52,6 +53,19 @@ app.MapGet("/orders", ([FromServices] IOrderService service)
         Console.WriteLine("After");
 
         return endpointResult;
+    })
+    .WithOpenApi(operation =>
+    {
+        operation.OperationId = "Get Orders";
+        operation.Description = "Get all orders";
+        operation.Summary = "[Summary] - Gets all orders";
+        operation.Tags = new List<OpenApiTag>
+        {
+            new() { Name = "Orders" },
+            new() { Name = "Get" },
+        };
+
+        return operation;
     });
 
 mobileApiGroup.MapGet("/rewards", () => "Secret discounts");

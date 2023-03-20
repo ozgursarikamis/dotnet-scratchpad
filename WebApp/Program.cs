@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.OpenApi.Models;
 using WebApp.Models;
 using WebApp.Services;
@@ -23,6 +24,18 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRateLimiter(new RateLimiterOptions()
+{
+    RejectionStatusCode = 429
+}.AddFixedWindowLimiter("FixedWindowLimiter", options =>
+{
+    options.PermitLimit = 1;
+    options.Window = TimeSpan.FromSeconds(2); // no more than 1 request per 2 seconds
+}));
+
+app.MapGet("/unlimited", () => "Unlimited");
+app.MapGet("/limited", () => "Limited").RequireRateLimiting("FixedWindowLimiter");
 
 var mobileApiGroup = app.MapGroup("/api")
     .AddEndpointFilter(async (context, next) =>

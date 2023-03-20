@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
 using WebApp.Models;
 using WebApp.Services;
 using WebApp.Services.Contracts;
@@ -57,7 +56,7 @@ app.MapGet("/orders", ([FromServices] IOrderService service)
 
 mobileApiGroup.MapGet("/rewards", () => "Secret discounts");
 
-mobileApiGroup.MapPost("survey", (SurveyResults results) =>
+app.MapGet("/survey", ([AsParameters]SurveyResults results) =>
 {
     return "Thank You!";
 });

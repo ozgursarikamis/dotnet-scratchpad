@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
+using WebApp.Models;
 using WebApp.Services;
 using WebApp.Services.Contracts;
 
@@ -22,6 +23,21 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+var mobileApiGroup = app.MapGroup("/api")
+    .AddEndpointFilter(async (context, next) =>
+    {
+        context.HttpContext.Request.Headers.TryGetValue("x-device-type", out var deviceType);
+        if (deviceType != "mobile")
+        {
+            return Results.BadRequest();
+        }
+
+        var result = await next(context);
+        Debug.WriteLine("After");
+        return result;
+    });
+
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/orders", ([FromServices] IOrderService service)
         => Results.Ok(service.GetOrders()))
@@ -34,17 +50,11 @@ app.MapGet("/orders", ([FromServices] IOrderService service)
         return endpointResult;
     });
 
-app.MapGet("/rewards", () => "Secret discounts")
-    .AddEndpointFilter(async (context, next) =>
-    {
-        context.HttpContext.Request.Headers.TryGetValue("x-device-type", out var deviceType);
-        if (deviceType != "mobile")
-        {
-            return Results.BadRequest();
-        }
-        var result = await next(context);
-        Debug.WriteLine("After");
-        return result;
-    });
+mobileApiGroup.MapGet("/rewards", () => "Secret discounts");
+
+mobileApiGroup.MapPost("survey", (SurveyResults results) =>
+{
+    return "Thank You!";
+});
 
 app.Run();

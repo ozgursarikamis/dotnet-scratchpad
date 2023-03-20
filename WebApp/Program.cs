@@ -39,6 +39,11 @@ var mobileApiGroup = app.MapGroup("/api")
     });
 
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/ordersByIds", (IOrderService orderService, int[] orderIds) =>
+{
+    return Results.Ok(orderService.GetOrders().Where(x => orderIds.Contains(x.Id)));
+});
+
 app.MapGet("/orders", ([FromServices] IOrderService service)
         => Results.Ok(service.GetOrders()))
     .AddEndpointFilter(async (context, next) =>

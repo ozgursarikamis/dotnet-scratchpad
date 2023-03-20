@@ -1,16 +1,17 @@
+using WebApp.Models;
 using WebApp.Services.Contracts;
 
 namespace WebApp.Services;
 
 public class OrderService : IOrderService
 {
-    public object? GetOrders()
+    public IEnumerable<Order> GetOrders()
     {
-        return new[]
+        return new List<Order>
         {
-            new { Id = Guid.NewGuid(), Name = "Order 1", Date = DateTime.Today },
-            new { Id = Guid.NewGuid(), Name = "Order 2", Date = DateTime.Today.AddDays(-1) },
-            new { Id = Guid.NewGuid(), Name = "Order 3", Date = DateTime.Today.AddDays(-3) },
+            new() { Id = 1, Date = DateTime.Today },
+            new() { Id = 2, Date = DateTime.Today.AddDays(-1) },
+            new() { Id = 3, Date = DateTime.Today.AddDays(-3) },
         };
     }
 }

@@ -1,29 +1,45 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using static System.Console;
 
-int i = 42;
-dynamic di = i;
-int i2 = di;
 
-WriteLine($"i = {i}, di = {di}, i2 = {i2}");
+namespace ConsoleApp
+{
+    internal static class Program
+    {
+        private static void Main(string[] args)
+        {
+            int i = 42;
+            PrintMe(i);
 
-// string s = "Hello";
-// dynamic ds = s;
-// int x = ds;
-//
-// WriteLine($"x = {x}");
+            dynamic d;
+            WriteLine("Create [i]nt or [d]ouble?");
+            ConsoleKeyInfo choice = ReadKey(true);
 
-long l = 99;
-dynamic dl = l;
-int y = (int)dl;
+            if (choice.Key == ConsoleKey.I)
+            {
+                d = 99;
+            }
+            else
+            {
+                d = 99.99;
+            }
+            
+            PrintMe(d);
+        }
 
-WriteLine($"l = {l}, dl = {dl}, y = {y}");
+        private static void PrintMe(int value)
+        {
+            WriteLine($"PrintMe(int) called value: {value}");
+        }
 
-dynamic z = "Hi There";
-WriteLine($"z is a {z.GetType()} = {z}");
+        private static void PrintMe(long value)
+        {
+            WriteLine($"PrintMe(long) called value: {value}");
+        }
 
-z = 42;
-WriteLine($"z is a {z.GetType()} = {z}");
-
-z = 3.14;
-WriteLine($"z is a {z.GetType()} = {z}");
+        private static void PrintMe(dynamic value)
+        {
+            WriteLine($"PrintMe(dynamic) called with a {value.GetType()} value: {value}");
+        }
+    }
+}

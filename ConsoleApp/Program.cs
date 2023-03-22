@@ -6,3 +6,9 @@ dynamic di = i;
 int i2 = di;
 
 WriteLine($"i = {i}, di = {di}, i2 = {i2}");
+
+string s = "Hello";
+dynamic ds = s;
+int x = ds;
+
+WriteLine($"x = {x}");

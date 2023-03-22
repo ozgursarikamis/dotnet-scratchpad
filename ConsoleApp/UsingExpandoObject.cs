@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 namespace ConsoleApp;
 
 public static class UsingExpandoObject
@@ -5,8 +7,11 @@ public static class UsingExpandoObject
     public static void Run()
     {
         // Replace Dictionary<string, string> with ExpandoObject
-        var customer = new Dictionary<string, string>();
-        customer.Add("ID", "42");
+        dynamic customer = new ExpandoObject();
+        customer.ID = "42";
+        
+        // now customer has a property named ID
+        WriteLine(customer.ID);
         
         WriteLine("enter 'done' to complete adding properties");
         
@@ -14,6 +19,8 @@ public static class UsingExpandoObject
         while (propertyName != "done")
         {
             string propertyValue = GetPropertyValue();
+            // RuntimeBinderException:
+            // 'System.Dynamic.ExpandoObject' does not contain a definition for 'Add'
             customer.Add(propertyName, propertyValue);
             propertyName = GetPropertyName();
         }

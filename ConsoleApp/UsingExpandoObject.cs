@@ -21,7 +21,11 @@ public static class UsingExpandoObject
             string propertyValue = GetPropertyValue();
             // RuntimeBinderException:
             // 'System.Dynamic.ExpandoObject' does not contain a definition for 'Add'
-            customer.Add(propertyName, propertyValue);
+            
+            // Fix is casting:
+            var c = (IDictionary<string, object>) customer;
+            
+            c.Add(propertyName, propertyValue);
             propertyName = GetPropertyName();
         }
         

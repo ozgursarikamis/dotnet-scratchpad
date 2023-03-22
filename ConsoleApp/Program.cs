@@ -23,7 +23,10 @@ namespace ConsoleApp
             {
                 d = 99.99;
             }
-            
+
+            PrintMe(d);
+
+            d = long.MaxValue;
             PrintMe(d);
         }
 

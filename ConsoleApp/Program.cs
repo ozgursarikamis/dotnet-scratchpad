@@ -15,6 +15,15 @@ WriteLine($"i = {i}, di = {di}, i2 = {i2}");
 
 long l = 99;
 dynamic dl = l;
-int y = dl;
+int y = (int)dl;
 
-WriteLine($"y = {y}");
+WriteLine($"l = {l}, dl = {dl}, y = {y}");
+
+dynamic z = "Hi There";
+WriteLine($"z is a {z.GetType()} = {z}");
+
+z = 42;
+WriteLine($"z is a {z.GetType()} = {z}");
+
+z = 3.14;
+WriteLine($"z is a {z.GetType()} = {z}");

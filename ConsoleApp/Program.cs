@@ -4,6 +4,8 @@ using static System.Console;
 OutputTimeStaticBinding();
 WriteLine("==================================");
 OutputTimeDynamicBinding();
+WriteLine("==================================");
+OutputDynamicRuntimeError();
 
 void OutputTimeStaticBinding()
 {
@@ -16,5 +18,14 @@ void OutputTimeDynamicBinding()
 {
     dynamic dt = DateTime.Now;
     string time = dt.ToLongTimeString();
+    WriteLine(time);
+}
+
+void OutputDynamicRuntimeError()
+{
+    dynamic dt = DateTime.Now;
+    
+    // This will throw a RuntimeBinderException:
+    string time = dt.IsItCoffeeTime();
     WriteLine(time);
 }

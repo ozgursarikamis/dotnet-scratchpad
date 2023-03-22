@@ -8,6 +8,9 @@ public static class ExtensionMethodCalls
         WriteLine(gentry.PrependHello()); 
         // Microsoft.CSharp.RuntimeBinder.RuntimeBinderException:
         // 'string' does not contain a definition for 'PrependHello'
+        
+        string gentry2 = "Gentry";
+        WriteLine(gentry2.PrependHello()); // Hello Gentry
     }
 }
 

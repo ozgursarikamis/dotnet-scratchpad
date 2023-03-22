@@ -7,7 +7,7 @@ namespace ConsoleApp
         
         private static void Main(string[] args)
         {
-            ExtensionMethodCalls.Run();
+            LimitationsOfCallableMethods.Run();
         }
     }
 }

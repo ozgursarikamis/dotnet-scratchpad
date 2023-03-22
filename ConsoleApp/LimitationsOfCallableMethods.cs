@@ -1,6 +1,6 @@
 namespace ConsoleApp;
 
-public static class ExtensionMethodCalls
+public static class LimitationsOfCallableMethods
 {
     public static void Run()
     {

@@ -7,8 +7,14 @@ int i2 = di;
 
 WriteLine($"i = {i}, di = {di}, i2 = {i2}");
 
-string s = "Hello";
-dynamic ds = s;
-int x = ds;
+// string s = "Hello";
+// dynamic ds = s;
+// int x = ds;
+//
+// WriteLine($"x = {x}");
 
-WriteLine($"x = {x}");
+long l = 99;
+dynamic dl = l;
+int y = dl;
+
+WriteLine($"y = {y}");

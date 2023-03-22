@@ -1,6 +1,6 @@
 namespace ConsoleApp;
 
-public class ExplicitlyImplementedInterfaceMembers
+public static class ExplicitlyImplementedInterfaceMembers
 {
     internal static void Run()
     {
@@ -26,5 +26,10 @@ internal class Person : IHelloable
     string IHelloable.PrependHello()
     {
         return $"Hello {FirstName}";
+    }
+
+    public void DoStuff()
+    {
+        WriteLine("DoStuff() was called");
     }
 }

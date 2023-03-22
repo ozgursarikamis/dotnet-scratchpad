@@ -7,7 +7,8 @@ namespace ConsoleApp
         
         private static void Main(string[] args)
         {
-            LimitationsOfCallableMethods.Run();
+            // LimitationsOfCallableMethods.Run();
+            ExplicitlyImplementedInterfaceMembers.Run();
         }
     }
 }

@@ -44,5 +44,13 @@ namespace ConsoleApp
         {
             WriteLine($"PrintMe(dynamic) called with a {value.GetType()} value: {value}");
         }
+
+        // dynamic and object are the same type
+        // in C#, dynamic reference and object reference are essentially the same thing 
+        // main difference is dynamic keyword, allows dynamic operations to be performed on the object
+        private static void PrintMe(object value)
+        {
+            WriteLine($"PrintMe(dynamic) called with a {value.GetType()} value: {value}");
+        }
     }
 }

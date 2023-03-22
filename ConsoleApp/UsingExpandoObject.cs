@@ -30,10 +30,13 @@ public static class UsingExpandoObject
         }
         
         WriteLine("\nCUSTOMER PROPERTIES:");
-        foreach (var item in customer)
+        foreach (KeyValuePair<string, object> item in customer)
         {
             WriteLine($"{item.Key} : {item.Value}");
         }
+        
+        // NOTICE: nowhere in the source code, FirstName is defined
+        WriteLine(customer.FirstName);
         WriteLine("\n\nPress [Enter] to exit");
     }
 

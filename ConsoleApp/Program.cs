@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Reflection;
 using static System.Console;
 
 
@@ -8,49 +10,36 @@ namespace ConsoleApp
     {
         private static void Main(string[] args)
         {
-            int i = 42;
-            PrintMe(i);
-
-            dynamic d;
-            WriteLine("Create [i]nt or [d]ouble?");
-            ConsoleKeyInfo choice = ReadKey(true);
-
-            if (choice.Key == ConsoleKey.I)
+            Customer c = new Customer();
+            
+            // c.FirstName.SomeDynamicMethod(); // <== Does not compile
+            // c.SecondName.SomeDynamicMethod();
+            
+            PropertyInfo firstNameProperty = typeof(Customer).GetProperty("FirstName");
+            foreach (var attribute in firstNameProperty.CustomAttributes)
             {
-                d = 99;
+                WriteLine(attribute);
             }
-            else
+            
+            WriteLine($"{firstNameProperty.PropertyType} FirstName");
+            WriteLine();
+            
+            PropertyInfo secondNameProperty = typeof(Customer).GetProperty("SecondName");
+            foreach (var attribute in secondNameProperty.CustomAttributes)
             {
-                d = 99.99;
+                WriteLine(attribute);
             }
-
-            PrintMe(d);
-
-            d = long.MaxValue;
-            PrintMe(d);
+            
+            WriteLine($"{secondNameProperty.PropertyType} FirstName");
+            WriteLine();
+            
+            // See the Output_1.png file.
         }
-
-        private static void PrintMe(int value)
-        {
-            WriteLine($"PrintMe(int) called value: {value}");
-        }
-
-        private static void PrintMe(long value)
-        {
-            WriteLine($"PrintMe(long) called value: {value}");
-        }
-
-        private static void PrintMe(dynamic value)
-        {
-            WriteLine($"PrintMe(dynamic) called with a {value.GetType()} value: {value}");
-        }
-
-        // dynamic and object are the same type
-        // in C#, dynamic reference and object reference are essentially the same thing 
-        // main difference is dynamic keyword, allows dynamic operations to be performed on the object
-        private static void PrintMe(object value)
-        {
-            WriteLine($"PrintMe(dynamic) called with a {value.GetType()} value: {value}");
-        }
+    }
+    
+    public class Customer
+    {
+        public object FirstName { get; set; }
+        public dynamic SecondName { get; set; }
     }
 }

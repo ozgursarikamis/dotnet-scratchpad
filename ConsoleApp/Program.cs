@@ -10,7 +10,8 @@ namespace ConsoleApp
             // LimitationsOfCallableMethods.Run();
             // ExplicitlyImplementedInterfaceMembers.Run();
             // ConsumingVoidMethods.Run();
-            UsingExpandoObject.Run();
+            // UsingExpandoObject.Run();
+            DynamicallyAddingExpandoObject.Run();
         }
     }
 }

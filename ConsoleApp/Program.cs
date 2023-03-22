@@ -9,7 +9,8 @@ namespace ConsoleApp
         {
             // LimitationsOfCallableMethods.Run();
             // ExplicitlyImplementedInterfaceMembers.Run();
-            ConsumingVoidMethods.Run();
+            // ConsumingVoidMethods.Run();
+            UsingExpandoObject.Run();
         }
     }
 }

@@ -19,6 +19,19 @@ public static class UnifiedNumericMethod
         WriteLine($"Dynamic overload {CommonMathDynamic.Add(double2, int2)}");
 
         // string result = CommonMathDynamic.Add(1, 4); // RuntimeBinderException: cannot implicitly convert type 'int' to 'string'
+        
+        WriteLine("==================================== Dynamic & GENERIC VERSION ====================================");
+        WriteLine(CommonMathDynamicWithGenerics.Add(int1, double1));
+        WriteLine(CommonMathDynamicWithGenerics.Add(double1, double1));
+    }
+}
+
+public static class CommonMathDynamicWithGenerics
+{
+    public static T Add<T>(T a, T b)
+    {
+        dynamic result = (dynamic)a + b;
+        return result;
     }
 }
 

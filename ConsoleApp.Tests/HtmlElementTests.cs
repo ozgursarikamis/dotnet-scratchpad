@@ -67,4 +67,15 @@ public class HtmlElementTests
             var x = attribute;
         }
     }
+    
+    [Fact]
+    public void ShouldRenderHtml()
+    {
+        dynamic image = new HtmlElement("img");
+        image.src = "car.jpg";
+        image.alt = "Car";
+
+        var html = image.Render();
+        Assert.Equal("<img src=\"car.jpg\" alt=\"Car\" />", html);
+    }
 }

@@ -127,4 +127,10 @@ public class HtmlElement : DynamicObject, IDictionary<string, object>
         result = null;
         return false;
     }
+
+    // This method overrides the method above
+    public string Render()
+    {
+        return "xyz";
+    }
 }

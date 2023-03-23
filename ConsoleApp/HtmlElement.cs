@@ -109,8 +109,8 @@ public class HtmlElement : DynamicObject, IDictionary<string, object>
 
     public object this[string key]
     {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
+        get => _attributes[key];
+        set => _attributes[key] = value;
     }
 
     public ICollection<string> Keys { get; }

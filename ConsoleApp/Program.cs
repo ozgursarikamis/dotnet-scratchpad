@@ -14,7 +14,8 @@ namespace ConsoleApp
             // DynamicallyAddingExpandoObject.Run();
             // ReflectionSimplifying.Run();
             // UnifiedNumericMethod.Run();
-            DynamicCodingWithJson.Run();
+            // DynamicCodingWithJson.Run();
+            DynamicInterop.Run();
         }
     }
 }

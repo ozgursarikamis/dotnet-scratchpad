@@ -15,7 +15,8 @@ namespace ConsoleApp
             // ReflectionSimplifying.Run();
             // UnifiedNumericMethod.Run();
             // DynamicCodingWithJson.Run();
-            DynamicInterop.Run();
+            // DynamicInterop.Run();
+            DynamicInterop.RunPythonObjects();
         }
     }
 }

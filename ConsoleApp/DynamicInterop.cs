@@ -27,4 +27,17 @@ public static class DynamicInterop
         WriteLine("Press any key to continue...");
         ReadKey();
     }
+
+    public static void RunPythonObjects()
+    {
+        ScriptEngine engine = Python.CreateEngine();
+        string tupleStatement = "customer = ('John', 42, 200)";
+        
+        ScriptScope scope = engine.CreateScope();
+        ScriptSource source = engine.CreateScriptSourceFromString(tupleStatement, SourceCodeKind.SingleStatement);
+        source.Execute(scope);
+        
+        dynamic pythonTuple = scope.GetVariable("customer");
+        WriteLine($"Name = {pythonTuple[0]} Age = {pythonTuple[1]} Salary = {pythonTuple[2]}");
+    }
 }

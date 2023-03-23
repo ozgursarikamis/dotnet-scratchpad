@@ -115,4 +115,16 @@ public class HtmlElement : DynamicObject, IDictionary<string, object>
 
     public ICollection<string> Keys { get; }
     public ICollection<object> Values { get; }
+
+    public override bool TryInvokeMember(InvokeMemberBinder binder, object?[]? args, out object? result)
+    {
+        if (binder.Name == "Render")
+        {
+            result = ToString();
+            return true;
+        }
+
+        result = null;
+        return false;
+    }
 }

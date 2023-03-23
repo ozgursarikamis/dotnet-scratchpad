@@ -23,6 +23,10 @@ public static class UnifiedNumericMethod
         WriteLine("==================================== Dynamic & GENERIC VERSION ====================================");
         WriteLine(CommonMathDynamicWithGenerics.Add(int1, double1));
         WriteLine(CommonMathDynamicWithGenerics.Add(double1, double1));
+
+        short short1 = 1;
+        short short2 = 2;
+        WriteLine(CommonMathDynamicWithGenerics.Add(short1, short2)); // RuntimeBinderException: 
     }
 }
 

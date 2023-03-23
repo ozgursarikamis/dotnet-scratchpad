@@ -13,6 +13,10 @@ public static class UnifiedNumericMethod
         double double2 = 5;
         
         WriteLine($"Double overload {CommonMath.Add(double1, double2)}");
+
+        WriteLine("==================================== DYNAMIC VERSION ====================================");
+        WriteLine($"Dynamic overload {CommonMathDynamic.Add(int1, double1)}");
+        WriteLine($"Dynamic overload {CommonMathDynamic.Add(double2, int2)}");
     }
 }
 
@@ -29,11 +33,20 @@ public static class CommonMath
     }
 }
 
-// Can't do this because no unified numeric types in C#
-public static class CommonMathGeneric
+public static class CommonMathDynamic
 {
-    public static T Add<T>(T a, T b) // can't say "where T is a numeric type"
+    public static dynamic Add(dynamic a, dynamic b)
     {
-        return a + b;
+        dynamic result = a + b;
+        return result;
     }
 }
+
+// // Can't do this because no unified numeric types in C#
+// public static class CommonMathGeneric
+// {
+//     public static T Add<T>(T a, T b) // can't say "where T is a numeric type"
+//     {
+//         return a + b;
+//     }
+// }

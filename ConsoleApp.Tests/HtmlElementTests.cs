@@ -43,4 +43,16 @@ public class HtmlElementTests
         
         Assert.Equal("<img src=\"car.jpg\" alt=\"Car\" />", html);
     }
+
+    [Fact]
+    public void ShouldBeCastableToDictionary()
+    {
+        dynamic image = new HtmlElement("img");
+        IDictionary<string, object> attributes =
+            (IDictionary<string, object>)image;
+        
+        attributes["src"] =  "car.jpg";
+        
+        Assert.Equal("car.jpg", image.src);
+    }
 }

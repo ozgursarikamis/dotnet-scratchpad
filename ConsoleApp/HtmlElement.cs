@@ -1,4 +1,5 @@
 using System.Dynamic;
+using System.Text;
 
 namespace ConsoleApp;
 
@@ -31,5 +32,20 @@ public class HtmlElement : DynamicObject
     public override IEnumerable<string> GetDynamicMemberNames()
     {
         return _attributes.Keys.ToArray();
+    }
+
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append($"<{TagName}");
+        
+        foreach (var attribute in _attributes)
+        {
+            sb.Append($" {attribute.Key}=\"{attribute.Value}\"");
+        }
+        
+        sb.Append(" />");
+
+        return sb.ToString();
     }
 }

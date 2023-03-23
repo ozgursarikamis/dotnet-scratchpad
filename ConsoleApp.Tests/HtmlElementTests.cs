@@ -31,4 +31,16 @@ public class HtmlElementTests
         // or:
         Assert.Equal(new[] {"src", "alt"}, members);
     }
+
+    [Fact]
+    public void ShouldOutputTagHtml()
+    {
+        dynamic image = new HtmlElement("img");
+        image.src = "car.jpg";
+        image.alt = "Car";
+
+        var html = image.ToString();
+        
+        Assert.Equal("<img src=\"car.jpg\" alt=\"Car\" />", html);
+    }
 }

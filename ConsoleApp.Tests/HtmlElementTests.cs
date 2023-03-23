@@ -12,8 +12,7 @@ public class HtmlElementTests
     [Fact]
     public void ShouldAddAttributeNameAndValueDynamically()
     {
-        // Won't even compile
-        var image = new HtmlElement("img");
+        dynamic image = new HtmlElement("img");
         image.src = "car.jpg";
         Assert.Equal("car.jpg", image.src);
     }

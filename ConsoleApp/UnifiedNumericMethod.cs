@@ -24,9 +24,21 @@ public static class UnifiedNumericMethod
         WriteLine(CommonMathDynamicWithGenerics.Add(int1, double1));
         WriteLine(CommonMathDynamicWithGenerics.Add(double1, double1));
 
+        WriteLine("==================================== Dynamic & GENERIC VERSION WITH EXPLICIT CAST ====================================");
         short short1 = 1;
         short short2 = 2;
-        WriteLine(CommonMathDynamicWithGenerics.Add(short1, short2)); // RuntimeBinderException: 
+        // WriteLine(CommonMathDynamicWithGenerics.Add(short1, short2)); // RuntimeBinderException: 
+        
+        WriteLine(CommonMathDynamicWithGenericsExplicitCast.Add(short1, short2));
+    }
+}
+
+public static class CommonMathDynamicWithGenericsExplicitCast
+{
+    public static T Add<T>(T a, T b)
+    {
+        dynamic result = (dynamic)a + b;
+        return (T)result; // Casting
     }
 }
 

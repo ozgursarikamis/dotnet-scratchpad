@@ -55,4 +55,16 @@ public class HtmlElementTests
         
         Assert.Equal("car.jpg", image.src);
     }
+
+    [Fact]
+    public void ShouldBeEnumerable()
+    {
+        dynamic image = new HtmlElement("img");
+        image.src = "car.jpg";
+
+        foreach (var attribute in (IDictionary<string, object>)image)
+        {
+            var x = attribute;
+        }
+    }
 }

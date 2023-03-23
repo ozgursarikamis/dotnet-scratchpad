@@ -37,7 +37,7 @@ public class HtmlElement : DynamicObject, IDictionary<string, object>
 
     public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
     {
-        throw new NotImplementedException();
+        return _attributes.GetEnumerator();
     }
 
     public override string ToString()

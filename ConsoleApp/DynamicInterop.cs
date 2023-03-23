@@ -40,4 +40,32 @@ public static class DynamicInterop
         dynamic pythonTuple = scope.GetVariable("customer");
         WriteLine($"Name = {pythonTuple[0]} Age = {pythonTuple[1]} Salary = {pythonTuple[2]}");
     }
+
+    public static void RunPassingCustomDynamicObject()
+    {
+        ScriptEngine engine = Python.CreateEngine();
+        HtmlElement image = new HtmlElement("img");
+
+        ScriptScope scope = engine.CreateScope();
+        scope.SetVariable("image", image);
+        
+        ScriptSource source = engine.CreateScriptSourceFromFile("SetImageAttributes.py");
+        
+        WriteLine($"image before python execution: {image}");
+        source.Execute(scope);
+        
+        WriteLine($"image after python execution: {image}");
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

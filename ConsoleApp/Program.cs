@@ -11,7 +11,8 @@ namespace ConsoleApp
             // ExplicitlyImplementedInterfaceMembers.Run();
             // ConsumingVoidMethods.Run();
             // UsingExpandoObject.Run();
-            DynamicallyAddingExpandoObject.Run();
+            // DynamicallyAddingExpandoObject.Run();
+            ReflectionSimplifying.Run();
         }
     }
 }

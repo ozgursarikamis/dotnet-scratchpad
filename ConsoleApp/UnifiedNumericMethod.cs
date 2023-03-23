@@ -40,6 +40,13 @@ public static class CommonMathDynamicWithGenericsExplicitCast
         dynamic result = (dynamic)a + b;
         return (T)result; // Casting
     }
+    
+    // to increase performance, if required for specific types:
+    public static double Add(double a, double b)
+    {
+        double result = a + b;
+        return result;
+    }
 }
 
 public static class CommonMathDynamicWithGenerics

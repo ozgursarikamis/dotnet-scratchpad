@@ -13,7 +13,8 @@ namespace ConsoleApp
             // UsingExpandoObject.Run();
             // DynamicallyAddingExpandoObject.Run();
             // ReflectionSimplifying.Run();
-            UnifiedNumericMethod.Run();
+            // UnifiedNumericMethod.Run();
+            DynamicCodingWithJson.Run();
         }
     }
 }

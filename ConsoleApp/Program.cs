@@ -12,7 +12,8 @@ namespace ConsoleApp
             // ConsumingVoidMethods.Run();
             // UsingExpandoObject.Run();
             // DynamicallyAddingExpandoObject.Run();
-            ReflectionSimplifying.Run();
+            // ReflectionSimplifying.Run();
+            UnifiedNumericMethod.Run();
         }
     }
 }

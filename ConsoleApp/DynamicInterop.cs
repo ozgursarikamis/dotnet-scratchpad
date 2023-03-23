@@ -18,9 +18,10 @@ public static class DynamicInterop
         ScriptScope scope = engine.CreateScope();
         scope.SetVariable("a", customerAge);
         
-        ScriptSource source = engine.CreateScriptSourceFromString(expression, SourceCodeKind.Expression);
-        dynamic dynamicResult = source.Execute(scope);
+        ScriptSource source = engine.CreateScriptSourceFromString(expression, SourceCodeKind.SingleStatement);
+        source.Execute(scope);
 
+        var dynamicResult = scope.GetVariable("result");
         WriteLine($"Expression Result: {dynamicResult}");
         
         WriteLine("Press any key to continue...");

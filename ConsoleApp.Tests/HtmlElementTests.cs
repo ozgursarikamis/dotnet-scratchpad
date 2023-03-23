@@ -25,8 +25,10 @@ public class HtmlElementTests
         image.alt = "Car";
 
         string[] members = image.GetDynamicMemberNames();
-        // Assert.Equal(new[] {"src", "alt"}, members);
         Assert.Equal("src", members[0]);
         Assert.Equal("alt", members[1]);
+        
+        // or:
+        Assert.Equal(new[] {"src", "alt"}, members);
     }
 }

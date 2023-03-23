@@ -27,4 +27,9 @@ public class HtmlElement : DynamicObject
 
         return true;
     }
+
+    public override IEnumerable<string> GetDynamicMemberNames()
+    {
+        return _attributes.Keys.ToArray();
+    }
 }

@@ -30,6 +30,9 @@ public static class UnifiedNumericMethod
         // WriteLine(CommonMathDynamicWithGenerics.Add(short1, short2)); // RuntimeBinderException: 
         
         WriteLine(CommonMathDynamicWithGenericsExplicitCast.Add(short1, short2));
+        
+        // Performance tip:
+        CommonMathDynamicWithGenericsExplicitCast.Add(double1, double2);
     }
 }
 

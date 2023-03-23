@@ -12,16 +12,10 @@ public static class DynamicCodingWithJson
             ""SecondName"": ""Smith""
         }";
         
-        Customer customer = JsonConvert.DeserializeObject<Customer>(customerJson);
+        dynamic customer = JsonConvert.DeserializeObject(customerJson);
         var firstName = customer.FirstName;
         var secondName = customer.SecondName;
         
         WriteLine($"Customer is {firstName} {secondName}");
     }
-}
-
-public class Customer
-{
-    public string FirstName { get; set; }
-    public string SecondName { get; set; }
 }

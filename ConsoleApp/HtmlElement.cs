@@ -128,9 +128,15 @@ public class HtmlElement : DynamicObject, IDictionary<string, object>
         return false;
     }
 
-    // This method overrides the method above
-    public string Render()
+    // // This method overrides the method above
+    // public string Render()
+    // {
+    //     return "xyz";
+    // }
+
+    public override bool TryInvoke(InvokeBinder binder, object?[]? args, out object? result)
     {
-        return "xyz";
+        result = ToString();
+        return true;
     }
 }

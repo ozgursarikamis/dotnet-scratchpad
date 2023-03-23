@@ -78,4 +78,16 @@ public class HtmlElementTests
         var html = image.Render();
         Assert.Equal("<img src=\"car.jpg\" alt=\"Car\" />", html);
     }
+
+    [Fact]
+    public void ShouldRenderHtmlOnInvoke()
+    {
+        dynamic image = new HtmlElement("img");
+        image.src = "car.jpg";
+        image.alt = "Car";
+
+        var html = image();
+        
+        Assert.Equal("<img src=\"car.jpg\" alt=\"Car\" />", html);
+    }
 }

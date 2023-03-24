@@ -7,9 +7,12 @@ public static class JsonSerializerApp
     public static void Run()
     {
         var text = File.ReadAllText("./Json/sample.json");
-        var course = JsonSerializer.Deserialize<Course>(text);
-        
-        // This will fail because, JsonSerializer expects Json in pascal case by default.
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+        var course = JsonSerializer.Deserialize<Course>(text, options);
+
         
         WriteLine($"Course Name: {course.CourseName}");
         WriteLine($"Language: {course.Language}");

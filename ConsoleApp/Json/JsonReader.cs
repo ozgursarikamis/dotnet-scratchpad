@@ -21,5 +21,25 @@ public abstract class JsonReader
             .GetString();
         
         WriteLine($"Name is {firstName}");
+        
+        EnumerateElement(root);
+    }
+
+    private static void EnumerateElement(JsonElement root)
+    {
+        foreach (var prop in root.EnumerateObject())
+        {
+            if (prop.Value.ValueKind == JsonValueKind.Object)
+            {
+                WriteLine($"{prop.Name}");
+                WriteLine("----- BEGIN OBJECT -----");
+                EnumerateElement(prop.Value);
+                WriteLine("----- END OBJECT -----");
+            }
+            else
+            {
+                WriteLine($"{prop.Value}:{prop.Value.GetRawText()}");
+            }
+        }
     }
 }

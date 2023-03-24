@@ -8,4 +8,5 @@
 
 using ConsoleApp.Json;
 
-GetJsonTokens.Run();
+// GetJsonTokens.Run();
+JsonReader.Run();

@@ -4,12 +4,22 @@ public static class PatternMatching
 {
     public static void Run()
     {
-        
+        var teacher = new Teacher("John", "Doe", "Math");
+        var student = new Student("Jane", "Doe", teacher, 7);
+        var result = IsInSeventhGradeMath(student);
+        WriteLine(result);
     }
     
-    public static bool IsInSeventhGradeMath(Student student)
+    private static bool IsInSeventhGradeMath(Student student)
     {
-        return student is Student(_, _, _, _); // _ = discard pattern: Matches any student
+        // return student is Student(_, _, _, _); // _ = discard pattern: Matches any student
+        // return student is Student(_, _, _, 7); // matches only 7th grade
+        
+        // return student is Student(_, _, Teacher(_, _, _), 7); // matches only 7th grade
+        // return student is Student(_, _, (_, _, _), 7); // exactly the same as above
+        // return student is (_, _, (_, _, _), 7); // exactly the same as above
+        
+        return student is (_, _, (_, _, "Math"), 7); // the result
     }
 }
 

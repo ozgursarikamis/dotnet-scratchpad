@@ -4,4 +4,8 @@
 // PatternMatching.Run();
 // SwitchExpressions.Run();
 // TuplePatterns.Run();
-IndicesAndRanges.Run();
+// IndicesAndRanges.Run();
+
+using ConsoleApp.Json;
+
+GetJsonTokens.Run();

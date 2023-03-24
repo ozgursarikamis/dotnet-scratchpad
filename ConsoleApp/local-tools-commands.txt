@@ -1,0 +1,3 @@
+> dotnet new tool-manifest 
+> dotnet tool install dmd5 
+> dotnet dmd5 "test"

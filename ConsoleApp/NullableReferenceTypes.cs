@@ -4,7 +4,8 @@ public static class NullableReferenceTypes
 {
     public static void Run()
     {
-        
+        var post = new BlogPost(null);
+        WriteLine($"Post Title: {post.Title}");
     }
 
     private static void PrintPostInfo(BlogPost post)
@@ -29,18 +30,35 @@ public static class NullableReferenceTypes
 
 public class BlogPost
 {
-    public string? Title { get; set; }
-    public List<Comment>? Comments { get; set; }
+    public string Title { get; set; }
+    public List<Comment> Comments { get; set; } = new();
+
+    public BlogPost(string title)
+    {
+        Title = title;
+    }
 }
 
 public class Author
 {
     public string? Name { get; set; }
     public string? Email { get; set; }
+
+    public Author(string name, string email)
+    {
+        Name = name;
+        Email = email;
+    }
 }
 
 public class Comment
 {
     public string? Body { get; set; }
     public Author? PostedBy { get; set; }
+
+    public Comment(string body, Author postedBy)
+    {
+        Body = body;
+        PostedBy = postedBy;
+    }
 }

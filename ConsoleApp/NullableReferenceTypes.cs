@@ -7,6 +7,20 @@ public static class NullableReferenceTypes
         
     }
 
+    private static void PrintPostInfo(BlogPost post)
+    {
+        WriteLine($"{post.Title} ({post.Title!.Length})");
+
+        foreach (var comment in post.Comments)
+        {
+            var commentPreview = comment.Body.Length > 10
+                ? $"{comment.Body.Substring(0, 10)}..."
+                : comment.Body;
+            
+            WriteLine($"{comment.PostedBy.Name} ({comment.PostedBy.Email}): {commentPreview}");
+        }
+    }
+
     private static void PrintTitle(BlogPost post)
     {
         WriteLine(post.Title);

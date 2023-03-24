@@ -9,4 +9,5 @@
 using ConsoleApp.Json;
 
 // GetJsonTokens.Run();
-JsonReader.Run();
+// JsonReader.Run();
+JsonWriter.Run();

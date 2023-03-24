@@ -6,6 +6,11 @@ public static class PatternMatching
     {
         
     }
+    
+    public static bool IsInSeventhGradeMath(Student student)
+    {
+        return student is Student(_, _, _, _); // _ = discard pattern: Matches any student
+    }
 }
 
 public class Student

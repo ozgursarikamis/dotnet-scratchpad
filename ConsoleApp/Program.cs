@@ -3,4 +3,5 @@
 // NullableReferenceTypes.Run();
 // PatternMatching.Run();
 // SwitchExpressions.Run();
-TuplePatterns.Run();
+// TuplePatterns.Run();
+IndicesAndRanges.Run();

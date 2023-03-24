@@ -4,9 +4,26 @@ public static class PatternMatching
 {
     public static void Run()
     {
-        var teacher = new Teacher("John", "Doe", "Math");
-        var student = new Student("Jane", "Doe", teacher, 7);
-        var result = IsInSeventhGradeMath(student);
+        // var teacher = new Teacher("John", "Doe", "Math");
+        // var student = new Student("Jane", "Doe", teacher, 7);
+        // var result = IsInSeventhGradeMath(student);
+        // WriteLine(result);
+        
+        var employee = new Employee
+        {
+            FirstName = "John",
+            LastName = "Doe",
+            Type = "Contractor",
+            Region = "US",
+            ReportsTo = new Employee
+            {
+                FirstName = "Jane",
+                LastName = "Doe",
+                Type = "Manager",
+                Region = "UK"
+            }
+        };
+        var result = IsUsBasedWithUkManager(employee);
         WriteLine(result);
     }
     
@@ -21,6 +38,24 @@ public static class PatternMatching
         
         return student is (_, _, (_, _, "Math"), 7); // the result
     }
+
+    private static bool IsUsBasedWithUkManager(object e)
+    {
+        // return e is Employee ee &&
+        //        ee is { Region: "US", ReportsTo: { Region: "UK" } };
+        
+        // OR:
+        return e is Employee { Region: "US", ReportsTo: { Region: "UK" } };
+    }
+}
+
+public class Employee
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Type { get; set; }
+    public string Region { get; set; }
+    public Employee ReportsTo { get; set; }
 }
 
 public class Student

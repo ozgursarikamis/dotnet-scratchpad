@@ -2,7 +2,7 @@ using System.Buffers;
 using System.Text;
 using System.Text.Json;
 
-namespace ConsoleApp.Json;
+namespace WhatsNewInCSharp8.Json;
 
 public static class JsonWriter
 {

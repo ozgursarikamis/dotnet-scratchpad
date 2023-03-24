@@ -1,4 +1,4 @@
 // Global using directives
 
-global using ConsoleApp;
+global using WhatsNewInCSharp8;
 global using static System.Console;

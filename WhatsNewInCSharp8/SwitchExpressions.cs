@@ -1,4 +1,4 @@
-namespace ConsoleApp;
+namespace WhatsNewInCSharp8;
 
 public static class SwitchExpressions
 {

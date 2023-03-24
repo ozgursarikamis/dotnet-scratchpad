@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace ConsoleApp.Json;
+namespace WhatsNewInCSharp8.Json;
 
 public abstract class JsonReader
 {

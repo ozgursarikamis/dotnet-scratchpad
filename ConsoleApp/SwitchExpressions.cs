@@ -6,6 +6,25 @@ public static class SwitchExpressions
     {
         DisplayMeasurement(-0.4);
         DisplayMeasurement2(-0.4);
+        DisplayMeasurement_CaseGuards(2, 3);
+        DisplayMeasurement_CaseGuards(2, -3);
+    }
+
+
+    private static void DisplayMeasurement_CaseGuards(int a, int b)
+    {
+        switch (a, b)
+        {
+            case (> 0, > 0) when a == b:
+                WriteLine("Both are positive");
+                break;
+            case (> 0, > 0):
+                WriteLine("Both are positive, but not equal");
+                break;
+            default:
+                WriteLine("one or both measurements are not valid");
+                break;
+        }
     }
 
     private static void DisplayMeasurement2(double measurement)
@@ -36,5 +55,22 @@ public static class SwitchExpressions
                 WriteLine($"Value is {measurement}");
                 break;
         }
+    }
+
+    private class Rectangle
+    {
+        public double Width { get; set; }
+        public double Height { get; set; }
+    }
+
+    private class Circle
+    {
+        public double Radius { get; set; }
+    }
+
+    private class Triangle
+    {
+        public double Base { get; set; }
+        public double Height { get; set; }
     }
 }

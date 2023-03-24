@@ -8,8 +8,24 @@ public static class SwitchExpressions
         DisplayMeasurement2(-0.4);
         DisplayMeasurement_CaseGuards(2, 3);
         DisplayMeasurement_CaseGuards(2, -3);
+        
+        var shape = new Rectangle { Width = 10, Height = 5 };
+        var area = DetermineShapeArea(shape);
+        
+        WriteLine($"Area is {area}");
     }
 
+    private static double DetermineShapeArea(object shape)
+    {
+        var area = shape switch
+        {
+            Rectangle r => r.Width * r.Height,
+            Circle c => c.Radius * c.Radius * Math.PI,
+            Triangle t => t.Base * t.Height / 2,
+            _ => throw new ArgumentException(message: "invalid shape", paramName: nameof(shape))
+        };
+        return area;
+    }
 
     private static void DisplayMeasurement_CaseGuards(int a, int b)
     {

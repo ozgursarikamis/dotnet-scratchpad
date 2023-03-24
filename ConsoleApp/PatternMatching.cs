@@ -22,6 +22,19 @@ public class Student
         Teacher = teacher;
         GradeLevel = gradeLevel;
     }
+    
+    public void Deconstruct(
+        out string firstName,
+        out string lastName,
+        out Teacher teacher,
+        out int gradeLevel
+        )
+    {
+        firstName = FirstName;
+        lastName = LastName;
+        teacher = Teacher;
+        gradeLevel = GradeLevel;
+    }
 }
 
 public class Teacher
@@ -35,5 +48,16 @@ public class Teacher
         FirstName = firstName;
         LastName = lastName;
         Subject = subject;
+    }
+    
+    public void Deconstruct(
+        out string firstName, // add out any parameters you want to deconstruct
+        out string lastName,
+        out string subject
+        )
+    {
+        firstName = FirstName;
+        lastName = LastName;
+        subject = Subject;
     }
 }

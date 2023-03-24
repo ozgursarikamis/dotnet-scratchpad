@@ -2,4 +2,5 @@
 
 // NullableReferenceTypes.Run();
 // PatternMatching.Run();
-SwitchExpressions.Run();
+// SwitchExpressions.Run();
+TuplePatterns.Run();

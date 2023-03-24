@@ -10,4 +10,5 @@ using ConsoleApp.Json;
 
 // GetJsonTokens.Run();
 // JsonReader.Run();
-JsonWriter.Run();
+// JsonWriter.Run();
+JsonSerializerApp.Run();

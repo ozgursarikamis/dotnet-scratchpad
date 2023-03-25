@@ -5,9 +5,16 @@ public static class CollectionsAndAtomicOperations
     public static void Run()
     {
         var ordersQueue = new Queue<string>();
-        PlaceOrders(ordersQueue, "Xavier", 5);
-        PlaceOrders(ordersQueue, "Ramdevi", 5);
-
+        var task1 = Task.Run(() =>
+        {
+            PlaceOrders(ordersQueue, "Xavier", 5);
+        });
+        var task2 = Task.Run(() =>
+        {
+            PlaceOrders(ordersQueue, "Ramdevi", 3);
+        });
+        Task.WaitAll(task1, task2);
+        
         foreach (string order in ordersQueue)
             WriteLine($"ORDER: {order}");
     }

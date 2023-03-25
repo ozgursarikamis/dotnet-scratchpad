@@ -21,6 +21,13 @@ public static class CollectionsAndAtomicOperations
 
     private static void PlaceOrders(Queue<string> orders, string customerName, int nOrders)
     {
+        // A Queue<T> can support multiple readers concurrently,
+        // as long as the collection is not modified.
+        // Even so, enumerating through a collection is
+        // intrinsically not a thread-safe procedure.
+        
+        // SIDE NOTE: NONE of the standard collections are thread-safe.
+        
         for (var i = 0; i < nOrders; i++)
         {
             Thread.Sleep(1);

@@ -1,10 +1,12 @@
+using System.Collections.Concurrent;
+
 namespace ConcurrentCollections;
 
 public static class CollectionsAndAtomicOperations
 {
     public static void Run()
     {
-        var ordersQueue = new Queue<string>();
+        var ordersQueue = new ConcurrentQueue<string>();
         var task1 = Task.Run(() =>
         {
             PlaceOrders(ordersQueue, "Xavier", 5);
@@ -19,7 +21,7 @@ public static class CollectionsAndAtomicOperations
             WriteLine($"ORDER: {order}");
     }
 
-    private static void PlaceOrders(Queue<string> orders, string customerName, int nOrders)
+    private static void PlaceOrders(ConcurrentQueue<string> orders, string customerName, int nOrders)
     {
         // A Queue<T> can support multiple readers concurrently,
         // as long as the collection is not modified.

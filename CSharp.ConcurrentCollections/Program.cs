@@ -2,4 +2,5 @@
 
 using ConcurrentCollections;
 
-CollectionsAndAtomicOperations.Run();
+// CollectionsAndAtomicOperations.Run();
+ConcurrentDictionaries.Run();

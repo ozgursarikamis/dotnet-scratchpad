@@ -8,22 +8,28 @@ public static class AddItemsToConcurrentDictionary
     {
         var dict = new ConcurrentDictionary<string, string>();
 
-        var task1 = Task.Run(() =>
-        { 
-            dict.TryAdd("1", "One");
-            dict.TryAdd("2", "Two");
-        });
-        var task2 = Task.Run(() =>
+        var tasks = new List<Task>();
+        for (var i = 0; i < 10; i++)
         {
-            dict.TryAdd("3", "Three");
-            dict.TryAdd("4", "Four");
-        });
+            var i1 = i;
+            var task = Task.Run(() => {
+                dict.TryAdd($"Item_{i1.ToString()}", i1.ToString());
+            });
+            tasks.Add(task);
+        }
 
-        Task.WaitAll(task1, task2);
+        Task.WaitAll(tasks.ToArray());
 
         foreach (var item in dict)
         {
             WriteLine(item);
         }
+        
+        WriteLine("====================================");
+        
+        // TryGetValue:
+        
+        var doesItemExist = dict.TryGetValue("Item_1", out string? value);
+        WriteLine(doesItemExist ? $"Item_1 Exists: {value}" : "No such item");
     }
 }

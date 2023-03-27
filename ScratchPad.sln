@@ -4,11 +4,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{A578BF2D-5C57-4D30-A944-5095D1C4BA63}"
 EndProject
+		{6D1B284B-A5A0-4272-BDA0-0D370CA00644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF62CEB3-41E0-4AD0-823D-779F450FA2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF62CEB3-41E0-4AD0-823D-779F450FA2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF62CEB3-41E0-4AD0-823D-779F450FA2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF62CEB3-41E0-4AD0-823D-779F450FA2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	Global
+	GlobalSection(NestedProjects) = preSolution
+		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F} = {A578BF2D-5C57-4D30-A944-5095D1C4BA63}
+		{FF62CEB3-41E0-4AD0-823D-779F450FA2AA} = {A578BF2D-5C57-4D30-A944-5095D1C4BA63}
+		{F28812D0-8A7A-4B2E-8A79-BE9631C55666} = {A578BF2D-5C57-4D30-A944-5095D1C4BA63}
+	EndGlobalSection
+	EndGlobal
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{32CC4D34-2B68-4726-A3D2-8602D6CC0DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLanguageRuntime.ConsoleApp", "Language\DynamicLanguageRuntime.ConsoleApp\DynamicLanguageRuntime.ConsoleApp.csproj", "{6D1B284B-A5A0-4272-BDA0-0D370CA00644}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLanguageRuntime.Tests", "Language\Dynamic-CSharp\DynamicLanguageRuntime.Tests\DynamicLanguageRuntime.Tests.csproj", "{FF62CEB3-41E0-4AD0-823D-779F450FA2AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLanguageRuntime.Tests", "Language\DynamicLanguageRuntime.Tests\DynamicLanguageRuntime.Tests.csproj", "{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLanguageRuntime.ConsoleApp", "Language\Dynamic-CSharp\DynamicLanguageRuntime.ConsoleApp\DynamicLanguageRuntime.ConsoleApp.csproj", "{F28812D0-8A7A-4B2E-8A79-BE9631C55666}"
+EndProject
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,17 +33,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6D1B284B-A5A0-4272-BDA0-0D370CA00644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D1B284B-A5A0-4272-BDA0-0D370CA00644}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D1B284B-A5A0-4272-BDA0-0D370CA00644}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D1B284B-A5A0-4272-BDA0-0D370CA00644}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6D1B284B-A5A0-4272-BDA0-0D370CA00644} = {A578BF2D-5C57-4D30-A944-5095D1C4BA63}
-		{5ABFE22F-5EB3-4F57-9590-ABE365989D7F} = {A578BF2D-5C57-4D30-A944-5095D1C4BA63}
+		{F28812D0-8A7A-4B2E-8A79-BE9631C55666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28812D0-8A7A-4B2E-8A79-BE9631C55666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28812D0-8A7A-4B2E-8A79-BE9631C55666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28812D0-8A7A-4B2E-8A79-BE9631C55666}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

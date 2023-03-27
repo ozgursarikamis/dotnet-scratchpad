@@ -1,6 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{51A29E4F-7474-43F3-B33B-52F596767E63}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{AC95A612-7D0F-4F80-BDB6-43288C4A77D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{A578BF2D-5C57-4D30-A944-5095D1C4BA63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{32CC4D34-2B68-4726-A3D2-8602D6CC0DC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Whats-New-In-Dotnet-6", "Whats-New-In-Dotnet-6", "{6BAED93A-37D7-40EA-B2EE-E04A5DD16A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whats-New-In-Dotnet-6", "Framework\Whats-New-In-Dotnet-6\Whats-New-In-Dotnet-6.csproj", "{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +16,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BAED93A-37D7-40EA-B2EE-E04A5DD16A40} = {AC95A612-7D0F-4F80-BDB6-43288C4A77D5}
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA} = {6BAED93A-37D7-40EA-B2EE-E04A5DD16A40}
 	EndGlobalSection
 EndGlobal

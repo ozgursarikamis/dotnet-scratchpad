@@ -1,4 +1,4 @@
-namespace ConsoleApp;
+namespace WhatsNewInDotnet6;
 
 public static class NewTimer
 {

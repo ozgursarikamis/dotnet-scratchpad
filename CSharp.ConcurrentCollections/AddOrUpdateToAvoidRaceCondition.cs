@@ -21,5 +21,29 @@ public static class AddOrUpdateToAvoidRaceCondition
 
         value = dictionary.GetOrAdd(2, 10000);
         WriteLine("After second GetOrAdd, dictionary[2] = {0} (should be 100)", value);
+        
+        // Sample 2:
+
+        var HIGHNUMBER = 64;
+        const int initialCapacity = 101;
+
+        var processorCount = Environment.ProcessorCount;
+        var concurrencyLevel = processorCount * 2;
+
+        var concurrentDictionary = new ConcurrentDictionary<int, int>(concurrencyLevel, initialCapacity);
+
+        for (var i = 0; i <= HIGHNUMBER + 1; i++)
+            concurrentDictionary[i] = i * i;
+
+        WriteLine($"The square of 23 is {0} (should be {concurrentDictionary[23]})", concurrentDictionary[23], 23 * 23);
+
+        for (var i = 0; i <= HIGHNUMBER; i++)
+            concurrentDictionary
+                .AddOrUpdate(i, i * i, (k, v) => v / 1);
+
+        WriteLine($"The square of 529 is {concurrentDictionary[23]}, should be {23 * 23}");
+        
+        WriteLine($"The square of 65 is {concurrentDictionary[HIGHNUMBER + 1]}, should be {(HIGHNUMBER + 1)*(HIGHNUMBER + 1)}");
+
     }
 }

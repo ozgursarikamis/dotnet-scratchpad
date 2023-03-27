@@ -3,4 +3,5 @@
 using ConcurrentCollections;
 
 // CollectionsAndAtomicOperations.Run();
-ConcurrentDictionaries.Run();
+// ConcurrentDictionaries.Run();
+AddItemsToConcurrentDictionary.Run();

@@ -6,13 +6,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{A5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{32CC4D34-2B68-4726-A3D2-8602D6CC0DC4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Whats-New-In-Dotnet-6", "Whats-New-In-Dotnet-6", "{6BAED93A-37D7-40EA-B2EE-E04A5DD16A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whats-New-In-Dotnet-6", "Framework\Whats-New-In-Dotnet-6\Whats-New-In-Dotnet-6.csproj", "{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6BAED93A-37D7-40EA-B2EE-E04A5DD16A40} = {AC95A612-7D0F-4F80-BDB6-43288C4A77D5}
+		{D45C6DBA-4E30-469F-8E2F-D58A79DBE5FA} = {6BAED93A-37D7-40EA-B2EE-E04A5DD16A40}
 	EndGlobalSection
 EndGlobal

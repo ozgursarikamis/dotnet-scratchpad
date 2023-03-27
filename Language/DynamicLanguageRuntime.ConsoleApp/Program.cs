@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-namespace ConsoleApp
+namespace DynamicLanguageRuntime.ConsoleApp
 {
     internal static class Program
     {

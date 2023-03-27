@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class DynamicCodingWithJson
 {

@@ -1,4 +1,4 @@
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class UnifiedNumericMethod
 {

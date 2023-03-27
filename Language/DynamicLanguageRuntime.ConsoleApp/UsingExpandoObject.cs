@@ -1,6 +1,6 @@
 using System.Dynamic;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class UsingExpandoObject
 {

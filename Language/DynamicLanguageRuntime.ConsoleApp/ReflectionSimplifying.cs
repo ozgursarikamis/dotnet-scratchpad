@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Text;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class ReflectionSimplifying
 {

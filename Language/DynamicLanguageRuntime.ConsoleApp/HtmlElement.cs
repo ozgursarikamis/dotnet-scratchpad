@@ -2,7 +2,7 @@ using System.Collections;
 using System.Dynamic;
 using System.Text;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public class HtmlElement : DynamicObject, IDictionary<string, object>
 {

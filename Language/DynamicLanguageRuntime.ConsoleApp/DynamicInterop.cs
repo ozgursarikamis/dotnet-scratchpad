@@ -2,7 +2,7 @@ using IronPython.Hosting;
 using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class DynamicInterop
 {

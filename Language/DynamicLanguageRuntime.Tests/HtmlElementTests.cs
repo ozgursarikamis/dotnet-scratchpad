@@ -1,4 +1,6 @@
-namespace ConsoleApp.Tests;
+using DynamicLanguageRuntime.ConsoleApp;
+
+namespace DynamicLanguageRuntime.Tests;
 
 public class HtmlElementTests
 {

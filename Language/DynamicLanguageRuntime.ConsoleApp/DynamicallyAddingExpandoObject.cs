@@ -1,7 +1,7 @@
 using System.Dynamic;
 using System.Text;
 
-namespace ConsoleApp;
+namespace DynamicLanguageRuntime.ConsoleApp;
 
 public static class DynamicallyAddingExpandoObject
 {

@@ -6,4 +6,5 @@ using ConcurrentCollections;
 // ConcurrentDictionaries.Run();
 
 // AddItemsToConcurrentDictionary.Run();
-UpdateItemsInConcurrentDictionary.Run();
+// UpdateItemsInConcurrentDictionary.Run();
+CopyConcurrentDictionaryItemsToAnotherCollection.Run();

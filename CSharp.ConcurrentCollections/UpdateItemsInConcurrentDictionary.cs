@@ -24,5 +24,8 @@ public static class UpdateItemsInConcurrentDictionary
         dictionary.TryGetValue("2", out newValue);
 
         WriteLine(newValue);
+        
+        // Clear method:
+        dictionary.Clear();
     }
 }

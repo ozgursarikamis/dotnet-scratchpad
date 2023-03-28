@@ -8,4 +8,5 @@ using ConcurrentCollections;
 // AddItemsToConcurrentDictionary.Run();
 // UpdateItemsInConcurrentDictionary.Run();
 // CopyConcurrentDictionaryItemsToAnotherCollection.Run();
-AddOrUpdateToAvoidRaceCondition.Run();
+// AddOrUpdateToAvoidRaceCondition.Run();
+InterlockedAddMethod.Run();

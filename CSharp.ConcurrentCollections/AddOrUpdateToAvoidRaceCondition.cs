@@ -38,8 +38,23 @@ public static class AddOrUpdateToAvoidRaceCondition
         WriteLine($"The square of 23 is {0} (should be {concurrentDictionary[23]})", concurrentDictionary[23], 23 * 23);
 
         for (var i = 0; i <= HIGHNUMBER; i++)
+        {
+            bool success = false;
+            
             concurrentDictionary
-                .AddOrUpdate(i, i * i, (k, v) => v / 1);
+                .AddOrUpdate(i, i * i, (k, v) =>
+                {
+                    success = true;
+                    return v / 1;
+                });
+            
+            WriteLine($"Success? {success}");
+            
+            if (!success) continue;
+            var location = concurrentDictionary[HIGHNUMBER + 1];
+            Interlocked.Increment(ref location);
+            WriteLine($"Location {location}");
+        }
 
         WriteLine($"The square of 529 is {concurrentDictionary[23]}, should be {23 * 23}");
         

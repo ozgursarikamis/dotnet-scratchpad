@@ -19,8 +19,62 @@ public static class ConcurrencyWithQueues
         };
         ConcurrentQueue<int> concurrentIntQueue = new(ints);
         foreach (var item in concurrentIntQueue.ToArray())
-        {
             WriteLine(item);
+            
+        
+        WriteLine("====================================");
+        WriteLine("Enqueue Method:");
+        
+        concurrentIntQueue.Enqueue(3);
+        concurrentIntQueue.Enqueue(4);
+        concurrentIntQueue.Enqueue(5);
+        
+        foreach (var item in concurrentIntQueue.ToArray())
+            WriteLine(item);
+        
+        WriteLine($"TryPeek: {concurrentIntQueue.TryPeek(out var peekedValue)}");
+        WriteLine(peekedValue);
+        
+        WriteLine("====================================");
+        WriteLine($"TryDequeue: {concurrentIntQueue.TryDequeue(out var dequeuedValue)}");
+        WriteLine(dequeuedValue);
+        
+        WriteLine("====================================");
+        WriteLine("Another iteration style");
+        
+        foreach (var concurrentIntQueueItem in concurrentIntQueue) 
+            WriteLine(concurrentIntQueueItem);
+        
+        WriteLine("====================================");
+        WriteLine("Concurrency");
+        
+        var t1 = Task.Factory.StartNew(() =>
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                concurrentIntQueue.TryDequeue(out var dequeuedItem);
+                Thread.Sleep(100);
+            }
+        });
+        
+        var t2 = Task.Factory.StartNew(() =>
+        {
+            Thread.Sleep(300);
+            foreach (var item in concurrentIntQueue)
+            {
+                WriteLine(item);
+                Thread.Sleep(100);
+            }
+        });
+
+        try
+        {
+            Task.WaitAll(t1, t2);
+        }
+        catch (AggregateException e)
+        {
+            WriteLine(e.Message);
+            throw;
         }
     }
 

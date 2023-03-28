@@ -10,4 +10,4 @@ using ConcurrentCollections;
 // CopyConcurrentDictionaryItemsToAnotherCollection.Run();
 // AddOrUpdateToAvoidRaceCondition.Run();
 // InterlockedAddMethod.Run();
-ConcurrentQueues.Run();
+ConcurrencyWithQueues.Run();

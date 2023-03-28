@@ -1,10 +1,27 @@
+using System.Collections.Concurrent;
+
 namespace ConcurrentCollections;
 
-public static class ConcurrentQueues
+public static class ConcurrencyWithQueues
 {
     public static void Run()
     {
-        StandardQueues();
+        // StandardQueues();
+        ConcurrentQueues();
+    }
+
+    private static void ConcurrentQueues()
+    {
+        List<int> ints = new()
+        {
+            1,
+            2
+        };
+        ConcurrentQueue<int> concurrentIntQueue = new(ints);
+        foreach (var item in concurrentIntQueue.ToArray())
+        {
+            WriteLine(item);
+        }
     }
 
     private static void StandardQueues()

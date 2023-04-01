@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentCollections", "ConcurrentCollections\ConcurrentCollections.csproj", "{51A29E4F-7474-43F3-B33B-52F596767E63}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{4F964C64-CFF8-46E2-B152-947773485483}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConcurrentCollections", "ConcurrentCollections", "{766021E1-3EB6-412B-A60F-1B21C89D9100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentCollections", "Framework\ConcurrentCollections\ConcurrentCollections.csproj", "{5F27A987-B698-490D-8A20-D01195BB5127}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,13 +12,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51A29E4F-7474-43F3-B33B-52F596767E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F27A987-B698-490D-8A20-D01195BB5127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F27A987-B698-490D-8A20-D01195BB5127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F27A987-B698-490D-8A20-D01195BB5127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F27A987-B698-490D-8A20-D01195BB5127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{766021E1-3EB6-412B-A60F-1B21C89D9100} = {4F964C64-CFF8-46E2-B152-947773485483}
-		{51A29E4F-7474-43F3-B33B-52F596767E63} = {766021E1-3EB6-412B-A60F-1B21C89D9100}
+		{5F27A987-B698-490D-8A20-D01195BB5127} = {766021E1-3EB6-412B-A60F-1B21C89D9100}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{51A29E4F-7474-43F3-B33B-52F596767E63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCSharp", "DynamicCSharp\DynamicCSharp.csproj", "{51A29E4F-7474-43F3-B33B-52F596767E63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tests", "ConsoleApp.Tests\ConsoleApp.Tests.csproj", "{7F1A5583-3861-44F2-B4BE-DF92E68F17FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCSharp.Tests", "DynamicCSharp.Tests\DynamicCSharp.Tests.csproj", "{7F1A5583-3861-44F2-B4BE-DF92E68F17FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{6914BCB1-9B67-42E0-ACE3-03158593827A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicCSharp", "DynamicCSharp", "{064678CC-F4C6-4F95-B04B-38471AFEAD02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,10 @@ Global
 		{7F1A5583-3861-44F2-B4BE-DF92E68F17FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F1A5583-3861-44F2-B4BE-DF92E68F17FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F1A5583-3861-44F2-B4BE-DF92E68F17FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{064678CC-F4C6-4F95-B04B-38471AFEAD02} = {6914BCB1-9B67-42E0-ACE3-03158593827A}
+		{51A29E4F-7474-43F3-B33B-52F596767E63} = {064678CC-F4C6-4F95-B04B-38471AFEAD02}
+		{7F1A5583-3861-44F2-B4BE-DF92E68F17FA} = {064678CC-F4C6-4F95-B04B-38471AFEAD02}
 	EndGlobalSection
 EndGlobal

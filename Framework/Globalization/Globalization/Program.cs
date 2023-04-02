@@ -2,4 +2,5 @@
 
 // Introduction.Run();
 // WorkingWithNumbers.Run();
-CustomNumericFormats.Run();
+// CustomNumericFormats.Run();
+RegionInfoClass.Run();

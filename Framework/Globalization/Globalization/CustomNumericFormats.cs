@@ -6,11 +6,30 @@ public static class CustomNumericFormats
 {
     public static void Run()
     {
+        DecimalTryParseMethod();
         CurrencyNumberStyles();
         NumberStylesFloat();
         DecimalsWithWhiteSpaces();
         ParsingAndPersistingNumbers();
         CustomNumericFormatStrings();
+    }
+
+    private static void DecimalTryParseMethod()
+    {
+        var numberAsString = "1 000 000,5 kr";
+        if (
+            decimal.TryParse(
+                numberAsString, 
+                NumberStyles.Currency, 
+                new CultureInfo("sv-SE"), out var number))
+        {
+            WriteLine(number);
+        }
+        else
+        {
+            WriteLine("Could not parse the number");
+        }
+        WriteLine("========================================");
     }
 
     private static void CurrencyNumberStyles()

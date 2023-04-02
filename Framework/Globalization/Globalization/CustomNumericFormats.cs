@@ -21,8 +21,12 @@ public static class CustomNumericFormats
         
         decimal number = decimal.Parse(numberAsString, new CultureInfo("sv-SE"));
         WriteLine(number);
+
+        // var numberInUsFormat = 1.50.ToString(new CultureInfo("en-US"));
+        // var thisWillThrowException =
+        //     decimal.Parse(numberInUsFormat, new CultureInfo("sv-SE"));
+        // WriteLine(thisWillThrowException);
         
-        WriteLine("========================================");
     }
 
     private static void CustomNumericFormatStrings()

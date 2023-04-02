@@ -1,3 +1,4 @@
 ﻿using Globalization;
 
-Introduction.Run();
+// Introduction.Run();
+WorkingWithNumbers.Run();

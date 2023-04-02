@@ -6,8 +6,19 @@ public static class CustomNumericFormats
 {
     public static void Run()
     {
+        DecimalsWithWhiteSpaces();
         ParsingAndPersistingNumbers();
         CustomNumericFormatStrings();
+    }
+
+    private static void DecimalsWithWhiteSpaces()
+    {
+        WriteLine("========================================");
+        var decimalWithWhiteSpaces = decimal.Parse("  150  ", NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite,
+            new CultureInfo("sv-SE"));
+        WriteLine($"Decimals With White Space: {decimalWithWhiteSpaces}");
+        
+        WriteLine("========================================");
     }
 
     private static void ParsingAndPersistingNumbers()

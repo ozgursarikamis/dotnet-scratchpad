@@ -6,6 +6,10 @@ public static class WorkingWithNumbers
     {
         StandardNumericFormatStrings();
         DisplayNumbersAsStrings();
+        
+        // Round the number before calling ToString:
+        var rounded = Math.Round(1500.8).ToString("C0", new CultureInfo("en-US")); // $1,501
+        WriteLine($"Rounded: {rounded}");
     }
 
     /// <summary>

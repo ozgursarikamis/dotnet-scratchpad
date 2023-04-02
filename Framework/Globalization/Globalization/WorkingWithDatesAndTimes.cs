@@ -4,8 +4,32 @@ public static class WorkingWithDatesAndTimes
 {
     public static void Run()
     {
+        TimeZoneInfoClass();
         DateTimeOffsetUsage();
         Introduction();
+    }
+
+    private static void TimeZoneInfoClass()
+    {
+        DateTime date = 
+            new DateTime
+                (2020, 01, 01, 13, 30, 0, DateTimeKind.Utc);
+        
+        WriteLine($"The date is {date:dd MMM yyyy HH:mm}");
+        
+        var localTimeZoneId = TimeZoneInfo.Local.Id;
+        WriteLine($"Local time zone: {localTimeZoneId}");
+        var displayName = TimeZoneInfo.Local.DisplayName;
+        WriteLine($"Display name: {displayName}");
+        
+        var isDaylightSavingTime = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Today);
+        WriteLine($"Is daylight saving time: {isDaylightSavingTime}");
+        
+        WriteLine();
+        var timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(localTimeZoneId);
+        TimeZoneInfo.ConvertTimeFromUtc(date, timeZoneInfo);
+        
+        WriteLine("========================================");
     }
 
     private static void DateTimeOffsetUsage()

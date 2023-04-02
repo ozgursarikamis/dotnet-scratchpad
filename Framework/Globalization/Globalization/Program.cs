@@ -6,4 +6,5 @@
 // RegionInfoClass.Run();
 // WorkingWithDatesAndTimes.Run();
 // CustomNumericFormats.Run();
-RegionInfoClass.Run();
+// RegionInfoClass.Run();
+WorkingWithDatesAndTimes.Run();

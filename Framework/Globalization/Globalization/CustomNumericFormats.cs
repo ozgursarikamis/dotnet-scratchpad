@@ -6,14 +6,23 @@ public static class CustomNumericFormats
 {
     public static void Run()
     {
+        NumberStylesFloat();
         DecimalsWithWhiteSpaces();
         ParsingAndPersistingNumbers();
         CustomNumericFormatStrings();
     }
 
+    private static void NumberStylesFloat()
+    {
+        var floatNumber = decimal.Parse("       150,5       ",
+            NumberStyles.Float, new CultureInfo("sv-SE"));
+        // NumberStyles.Float automatically clears white spaces
+        WriteLine($"Float Number: {floatNumber}");
+        WriteLine("========================================");
+    }
+
     private static void DecimalsWithWhiteSpaces()
     {
-        WriteLine("========================================");
         var decimalWithWhiteSpaces = decimal.Parse("  150  ", NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite,
             new CultureInfo("sv-SE"));
         WriteLine($"Decimals With White Space: {decimalWithWhiteSpaces}");

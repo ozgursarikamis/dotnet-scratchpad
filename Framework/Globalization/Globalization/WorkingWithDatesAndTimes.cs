@@ -4,7 +4,21 @@ public static class WorkingWithDatesAndTimes
 {
     public static void Run()
     {
+        DateTimeOffsetUsage();
         Introduction();
+    }
+
+    private static void DateTimeOffsetUsage()
+    {
+        DateTimeOffset now = DateTimeOffset.Now;
+        WriteLine(now);
+
+        DateTimeOffset otherDate = now.ToOffset(TimeSpan.FromHours(1));
+        WriteLine(otherDate);
+
+        DateTimeOffset utcDate = otherDate.ToUniversalTime();
+        WriteLine(utcDate);
+        WriteLine("========================================");
     }
 
     private static void Introduction()
@@ -22,5 +36,6 @@ public static class WorkingWithDatesAndTimes
         WriteLine(specified1);
         
         WriteLine(dateTime);
+        WriteLine("========================================");
     }
 }

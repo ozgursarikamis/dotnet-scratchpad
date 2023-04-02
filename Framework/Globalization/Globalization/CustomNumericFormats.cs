@@ -6,10 +6,20 @@ public static class CustomNumericFormats
 {
     public static void Run()
     {
+        CurrencyNumberStyles();
         NumberStylesFloat();
         DecimalsWithWhiteSpaces();
         ParsingAndPersistingNumbers();
         CustomNumericFormatStrings();
+    }
+
+    private static void CurrencyNumberStyles()
+    {
+        WriteLine(decimal.Parse("100,50 kr", NumberStyles.Currency, new CultureInfo("sv-SE")));
+        WriteLine(decimal.Parse("$100.50", NumberStyles.Currency, new CultureInfo("en-US")));
+        WriteLine(decimal.Parse("£100.50", NumberStyles.Currency, new CultureInfo("en-GB")));
+        WriteLine(decimal.Parse("100,50€", NumberStyles.Currency, new CultureInfo("fr-FR")));
+        WriteLine("========================================");
     }
 
     private static void NumberStylesFloat()

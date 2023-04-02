@@ -6,12 +6,26 @@ public static class CustomNumericFormats
 {
     public static void Run()
     {
+        CultureAgnosticRepresentation();
         DecimalTryParseMethod();
         CurrencyNumberStyles();
         NumberStylesFloat();
         DecimalsWithWhiteSpaces();
         ParsingAndPersistingNumbers();
         CustomNumericFormatStrings();
+    }
+
+    private static void CultureAgnosticRepresentation()
+    {
+        // prepare data to be stored
+        string data = 1_500_000.50.ToString(CultureInfo.InvariantCulture);
+        
+        // restore data:
+        var number = decimal.Parse(data, CultureInfo.InvariantCulture);
+        
+        // NOTE: Use InvariantCulture to work with the data in a culture insensitive manner
+        // NOTE: JSON.NET uses InvariantCulture by default
+        WriteLine("========================================");
     }
 
     private static void DecimalTryParseMethod()

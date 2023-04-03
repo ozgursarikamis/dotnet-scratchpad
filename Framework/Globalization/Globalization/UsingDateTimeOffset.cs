@@ -4,8 +4,30 @@ public static class UsingDateTimeOffset
 {
     public static void Run()
     {
+        TryingToParseDate();
         ParsingDatesFromStrings();
         ConvertToLocalDateFromUtc();
+    }
+
+
+    private static void TryingToParseDate()
+    {
+        var parsed = DateTimeOffset.TryParseExact(
+            "5/10/2021 6:30:59 +08:00",
+            "M/d/yyyy h:m:s", 
+            null, 
+            DateTimeStyles.None, out var date);
+        
+        if (parsed)
+        {
+            WriteLine($"Parsed: {date.ToString("g", new CultureInfo("en-US"))}");
+        }
+        else
+        {
+            WriteLine("Could not parse date");
+        }
+        
+        WriteLine("========================================");
     }
 
     private static void ParsingDatesFromStrings()

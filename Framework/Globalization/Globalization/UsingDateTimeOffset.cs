@@ -14,9 +14,11 @@ public static class UsingDateTimeOffset
         string dateAsString = date.ToString("F", new CultureInfo("sv-SE"));
         string dateAsString2 = date.ToString("F", new CultureInfo("in-IN"));
         string dateAsString3 = date.ToString("F", new CultureInfo("ar-SA"));
+        string dateAsString_cultureIgnored = date.ToString("O", new CultureInfo("ar-SA"));
         WriteLine($"SE: {dateAsString} ");
         WriteLine($"IN: {dateAsString2} ");
         WriteLine($"AR: {dateAsString3} ");
+        WriteLine($"CULTURE IGNORED: {dateAsString_cultureIgnored} ");
         WriteLine("========================================");
     }
 

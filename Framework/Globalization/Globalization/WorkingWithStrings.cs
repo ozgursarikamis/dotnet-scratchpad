@@ -5,6 +5,30 @@ public static class WorkingWithStrings
     public static void Run()
     {
         Introduction();
+        TurkishIProblem();
+    }
+
+    private static void TurkishIProblem()
+    {
+        string input = "i";
+        string first = input.ToUpper(new CultureInfo("tr-TR"));
+        string second = input.ToUpper(new CultureInfo("en-US"));
+        
+        var result = string.Equals(first, second, StringComparison.Ordinal);
+        WriteLine($"string.Equals: {result}");
+        WriteLine("========================================");
+        
+        // Solution:
+        CultureInfo.CurrentCulture = new CultureInfo("tr-TR");
+        var upperInvariant = "i".ToUpperInvariant();
+        WriteLine($"upperInvariant: {upperInvariant}"); // returns I
+        WriteLine("========================================");
+        
+        var lower = "İ".ToLower();
+        var lower_i = "I".ToLower();
+        WriteLine($"lower İ: {lower}"); // returns i
+        WriteLine($"lower I: {lower_i.ToLowerInvariant()}"); // returns ı
+        WriteLine("========================================");
     }
 
     private static void Introduction()

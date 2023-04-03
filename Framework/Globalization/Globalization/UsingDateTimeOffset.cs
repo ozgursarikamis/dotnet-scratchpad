@@ -4,11 +4,27 @@ public static class UsingDateTimeOffset
 {
     public static void Run()
     {
+        AddAndSubtractDates();
         TryingToParseDate();
         ParsingDatesFromStrings();
         ConvertToLocalDateFromUtc();
     }
 
+    private static void AddAndSubtractDates()
+    {
+        DateTimeOffset date = new DateTimeOffset(2021, 01, 29, 23, 59, 00, TimeSpan.Zero);
+        DateTimeOffset newDate = date.AddMonths(1);
+        WriteLine(newDate.ToString("F", new CultureInfo("en-US")));
+
+        DateTimeOffset now = DateTimeOffset.Now;
+        DateTimeOffset future = now.Add(TimeSpan.FromHours(1));
+        // TimeSpan difference = now.Subtract(future);
+        TimeSpan difference = now - future;
+        WriteLine($"Difference: {difference}");
+        
+        //NOTE: Time zone is ignored when calculating the difference
+        WriteLine("========================================");
+    }
 
     private static void TryingToParseDate()
     {

@@ -8,4 +8,5 @@
 // CustomNumericFormats.Run();
 // RegionInfoClass.Run();
 // WorkingWithDatesAndTimes.Run();
-UsingDateTimeOffset.Run();
+// UsingDateTimeOffset.Run();
+WorkingWithStrings.Run();

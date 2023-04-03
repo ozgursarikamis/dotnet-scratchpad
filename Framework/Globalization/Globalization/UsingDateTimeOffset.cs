@@ -4,10 +4,22 @@ public static class UsingDateTimeOffset
 {
     public static void Run()
     {
+        UnixTimeStamp();
         AddAndSubtractDates();
         TryingToParseDate();
         ParsingDatesFromStrings();
         ConvertToLocalDateFromUtc();
+    }
+
+    private static void UnixTimeStamp()
+    {
+        // Unix TimeStamp always refers to UTC
+        // Which means, it doesn't keep any time zone information
+
+        long timestamp = 1616282420;
+        DateTimeOffset date = DateTimeOffset.FromUnixTimeSeconds(timestamp);
+        WriteLine(date.ToString("F", new CultureInfo("en-US")));
+        WriteLine("========================================");
     }
 
     private static void AddAndSubtractDates()
